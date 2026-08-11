@@ -1,6 +1,4 @@
 #include "Entity.hpp"
-
-#include <iostream>
 #include <memory>
 #include <vector>
 

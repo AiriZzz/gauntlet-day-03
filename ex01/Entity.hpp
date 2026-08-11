@@ -2,6 +2,7 @@
 #include <string>
 #include <initializer_list>
 #include <algorithm>
+#include <iostream>
 
 // Inventory.hpp: a resource that must be released
 class Inventory {
@@ -21,7 +22,7 @@ class Entity {
 public:
     explicit Entity(std::string name);
     virtual std::string describe() const= 0;   // pure virtual
-    virtual ~Entity() = default;                         // virtual!
+    virtual ~Entity();                         // virtual!
 protected:
     std::string m_name;
 };
@@ -29,13 +30,14 @@ protected:
 class Player : public Entity {
 public:
     explicit Player(std::string name);          // name only: players have no hp here
+    ~Player();
     std::string describe() const override;      // -> "Player <name>"
 };
 
 class Enemy : public Entity {
 public:
     Enemy(std::string name, int hp, std::initializer_list<std::string> loot);            // name AND hp, both required
-    ~Enemy() = default;                          // implicitly virtual (base dtor is virtual)
+    ~Enemy();                          // implicitly virtual (base dtor is virtual)
     std::string describe() const override;      // -> "Enemy <name> (hp N)"
 private:
     int m_hp;

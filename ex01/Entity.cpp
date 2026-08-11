@@ -1,6 +1,13 @@
 #include "Entity.hpp"
 
-Entity::Entity(std::string name) : m_name(name){}
+Entity::Entity(std::string name) : m_name(name){
+
+    std::cout << "+ Entity " + m_name + "\n";
+}
+
+Entity::~Entity(){
+    std::cout << "- Entity " + m_name + "\n";
+}
 
 /*Player::Player(std::string name) : Entity(name){}
 std::string Player::describe() const{
