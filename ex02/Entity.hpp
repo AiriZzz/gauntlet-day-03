@@ -12,7 +12,7 @@ class Entity {
         int currentHP() const;
         int maxHP() const;
         virtual std::string describe() const= 0;   // pure virtual
-        virtual ~Entity();                         // virtual!
+        virtual ~Entity() = default;                         // virtual!
     protected:
         std::string m_name;
     private:
@@ -25,7 +25,8 @@ class Player : public Entity {
     public:
         explicit Player(std::string name, int hp, int armor);          //ex02 player have name, hp, armor
         virtual void takeDamage(int amount) override;
-        ~Player();
+        //~Player() = default;
+        int currentArmor() const;
         std::string describe() const override;      // -> "Player <name>"
     
     private:
@@ -37,7 +38,7 @@ class Player : public Entity {
 class Enemy : public Entity {
 public:
     Enemy(std::string name, int hp);            // name AND hp, both required
-    ~Enemy();                          // implicitly virtual (base dtor is virtual)
+    //~Enemy() = default;                          // implicitly virtual (base dtor is virtual)
     std::string describe() const override;      // -> "Enemy <name> (hp N)"
 private:
     int m_hp;
