@@ -30,7 +30,6 @@ class Player : public Entity {
         std::string describe() const override;      // -> "Player <name>"
     
     private:
-    int m_hp;
     int m_armor;
 
 };
@@ -40,6 +39,5 @@ public:
     Enemy(std::string name, int hp);            // name AND hp, both required
     //~Enemy() = default;                          // implicitly virtual (base dtor is virtual)
     std::string describe() const override;      // -> "Enemy <name> (hp N)"
-private:
-    int m_hp;
+    
 };

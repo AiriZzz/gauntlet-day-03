@@ -1,10 +1,6 @@
 #include "Entity.hpp"
 
-Player::Player(std::string name, int hp, int armor) : Entity m_name(name), m_hp(hp){
-
-    //std::cout<< "+Entity " + m_name + " \n";
-    std::cout<< "+ Player " << m_name << " \n";
-}
+Player::Player(std::string name, int hp, int armor) : Entity(name, hp), m_armor(armor){}
 
 int Player::currentArmor() const{
 

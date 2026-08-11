@@ -6,11 +6,6 @@ Entity::~Entity(){
     std::cout << "- Entity " + m_name + "\n";
 }
 
-bool Entity::isAlive() const{
-
-    if (m_currentHp < 0) return false;
-}
-
 int Entity::currentHP() const{
 
     return m_currentHp;
