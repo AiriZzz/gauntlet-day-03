@@ -14,10 +14,6 @@ void Player::takeDamage(int amount){
     Entity::takeDamage(reduced);   // delegate: base applies the hit and logs it
 }
 
-Player::~Player(){
-    std::cout<< "- Player " << m_name << " \n";
-}
-
 
 std::string Player::describe() const{
     return "Player " + m_name + " (HP " + std::to_string(Entity::currentHP()) + "/" + std::to_string(Entity::maxHP()) 

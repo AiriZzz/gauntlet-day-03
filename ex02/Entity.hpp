@@ -12,7 +12,7 @@ class Entity {
         int currentHP() const;
         int maxHP() const;
         virtual std::string describe() const= 0;   // pure virtual
-        virtual ~Entity() = default;                         // virtual!
+        virtual ~Entity();                         // virtual!
     protected:
         std::string m_name;
     private:

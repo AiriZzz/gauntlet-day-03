@@ -1,6 +1,13 @@
 #include "Entity.hpp"
 
-Entity::Entity(std::string name, int maxHp) : m_name(name), m_maxHp(maxHp){}
+Entity::Entity(std::string name, int maxHp) : m_name(name), m_maxHp(maxHp){ m_currentHp = m_maxHp;}
+
+bool Entity::isAlive() const
+{
+
+return m_currentHp > 0;
+
+}
 
 Entity::~Entity(){
     std::cout << "- Entity " + m_name + "\n";
