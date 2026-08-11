@@ -6,7 +6,7 @@ CXX      := c++
 CXXFLAGS := -Wall -Wextra -Werror -std=c++17
 
 # List every .cpp file in the exercise here
-SRCS := main.cpp Entity.cpp 
+SRCS := main.cpp Entity.cpp Player.cpp Enemy.cpp
 OBJS := $(SRCS:.cpp=.o)
 
 # `make` / `make all`: build the binary
